@@ -1,0 +1,68 @@
+{
+    "recipes": [
+        {
+            "tite": "Hamburger",
+            "author": "John Jones",
+            "cuisine": "American",
+            "rating": 4.5,
+            "ingredients": [
+                "1 hamburger bun",
+                "1 hamburger patty",
+                "salt",
+                "pepper",
+                "BBQ sauce",
+                "mayo",
+                "1 slice of cheese"
+            ],
+            "cook_temp": 400,
+            "cook_time": 10
+        },
+        {
+            "tite": "Chicken Alfredo",
+            "author": "Luis Armstrong",
+            "cuisine": "Italian",
+            "rating": 5,
+            "ingredients": [
+                "1 package of pasta",
+                "3lbs of chicken",
+                "1 can of alfredo sauce",
+                "salt",
+                "pepper",
+                "old bay seasoning"
+            ],
+            "cook_temp": 375,
+            "cook_time": 20
+        },
+        {
+            "tite": "General Tso Chicken",
+            "author": "Matthew Adams",
+            "cuisine": "Chinese",
+            "rating": 4,
+            "ingredients": [
+                "1 package of chicken",
+                "1 container of general tso sauce",
+                "salt",
+                "pepper",
+                "1 bag of rice"
+            ],
+            "cook_temp": 350,
+            "cook_time": 25
+        },
+        {
+            "tite": "Burrito",
+            "author": "Jose Johnson",
+            "cuisine": "Mexican",
+            "rating": 5,
+            "ingredients": [
+                "1 soft shell",
+                "4oz of seasoned beef",
+                "sour cream",
+                "lettuce",
+                "tomatoes",
+                "cheese"
+            ],
+            "cook_temp": 350,
+            "cook_time": 5
+        }
+    ]
+}

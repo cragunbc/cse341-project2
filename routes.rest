@@ -1,0 +1,8 @@
+// LOCALHOST
+
+### Gets all of the recipes locally
+GET http://localhost:3000/recipes
+
+
+### Gets a single recipe by it's ID
+GET http://localhost:3000/recipes/68b22c264e1c21ef371e0c7e
