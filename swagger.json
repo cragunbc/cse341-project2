@@ -33,20 +33,23 @@
     },
     "/recipes/": {
       "get": {
-        "summary": "Gets all of the recipes",
-        "description": "Gets a list of all the recipes from the database",
+        "summary": "Gets all recipes",
+        "description": "Gets all recipes from the database",
         "produces": [
           "application/json"
         ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
-        "summary": "Creates a new recipe",
-        "description": "Creates a new recipe from the JSON boy info that you provide below",
+        "summary": "Creates a newe recipe",
+        "description": "Creates a new recipe to put in the databse",
         "parameters": [
           {
             "name": "body",
@@ -64,16 +67,16 @@
                   "example": "any"
                 },
                 "rating": {
-                  "example": 1
+                  "example": 5
                 },
                 "ingredients": {
                   "example": ["any"]
                 },
                 "cook_temp": {
-                  "example": 1
+                  "example": 350
                 },
                 "cook_time": {
-                  "example": 1
+                  "example": 20
                 }
               }
             }
@@ -95,7 +98,7 @@
     "/recipes/{id}": {
       "get": {
         "summary": "Gets a recipe by ID",
-        "description": "Pulls a recipe from the database based on the ID that you provide",
+        "description": "Gets a recipe by its ID from the database",
         "produces": [
           "application/json"
         ],
@@ -110,12 +113,18 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
         "summary": "Updates a recipe",
-        "description": "Updates a recipe in the database based off its ID",
+        "description": "Updates a recipe in the database based off the JSON data you provide",
         "parameters": [
           {
             "name": "id",
@@ -139,16 +148,16 @@
                   "example": "any"
                 },
                 "rating": {
-                  "example": 1
+                  "example": 5
                 },
                 "ingredients": {
                   "example": ["any"]
                 },
                 "cook_temp": {
-                  "example": 1
+                  "example": 350
                 },
                 "cook_time": {
-                  "example": 1
+                  "example": 20
                 }
               }
             }
@@ -157,6 +166,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
@@ -177,6 +189,147 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "summary": "Gets all users",
+        "description": "Gets all of the users from the database",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a new user",
+        "description": "Creates a new user for the database",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "age": {
+                  "example": 20
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "summary": "Gets a user based off it's ID",
+        "description": "Gets a user from the database based off the ID you provide",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates a user",
+        "description": "Updates a user based off the JSON data you provide",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "age": {
+                  "example": 20
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes a user",
+        "description": "Deletes a user from the database based off its ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"

@@ -4,8 +4,16 @@
 GET http://localhost:3000/recipes
 
 
+### Gets all of the users locally
+GET http://localhost:3000/users
+
+
 ### Gets a single recipe by it's ID
 GET http://localhost:3000/recipes/68b22c264e1c21ef371e0c7e
+
+
+### Gets a single user by it's ID
+GET http://localhost:3000/users/68cec4d117e57d02626d742b
 
 
 ### Creates a new recipe
@@ -27,6 +35,16 @@ content-type: application/json
     ],
     "cook_temp": 350,
     "cook_time": 5
+}
+
+
+### Creates a new user
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+    "name": "Amber",
+    "age": 100
 }
 
 
@@ -53,5 +71,19 @@ content-type: application/json
 }
 
 
+### Updates a user by it's ID
+PUT http://localhost:3000/users/68ced0b16dd6347fcce59514
+content-type: application/json
+
+{
+    "name": "Amber Bush",
+    "age": 10000
+}
+
+
 ### Deletes a recipe by its ID
 DELETE http://localhost:3000/recipes/68cebbae5fbd96e5eb6c5110
+
+
+### Deletes a user by its ID
+DELETE http://localhost:3000/users/68ced0b16dd6347fcce59514
