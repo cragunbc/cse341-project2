@@ -5,10 +5,10 @@
     "description": "Recipes API",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-project2-u2ip.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
@@ -33,7 +33,8 @@
     },
     "/recipes/": {
       "get": {
-        "description": "",
+        "summary": "Gets all of the recipes",
+        "description": "Gets a list of all the recipes from the database",
         "produces": [
           "application/json"
         ],
@@ -44,7 +45,8 @@
         }
       },
       "post": {
-        "description": "",
+        "summary": "Creates a new recipe",
+        "description": "Creates a new recipe from the JSON boy info that you provide below",
         "parameters": [
           {
             "name": "body",
@@ -92,7 +94,8 @@
     },
     "/recipes/{id}": {
       "get": {
-        "description": "",
+        "summary": "Gets a recipe by ID",
+        "description": "Pulls a recipe from the database based on the ID that you provide",
         "produces": [
           "application/json"
         ],
@@ -111,7 +114,8 @@
         }
       },
       "put": {
-        "description": "",
+        "summary": "Updates a recipe",
+        "description": "Updates a recipe in the database based off its ID",
         "parameters": [
           {
             "name": "id",
@@ -135,16 +139,16 @@
                   "example": "any"
                 },
                 "rating": {
-                  "example": "any"
+                  "example": 1
                 },
                 "ingredients": {
-                  "example": "any"
+                  "example": ["any"]
                 },
                 "cook_temp": {
-                  "example": "any"
+                  "example": 1
                 },
                 "cook_time": {
-                  "example": "any"
+                  "example": 1
                 }
               }
             }
@@ -160,7 +164,8 @@
         }
       },
       "delete": {
-        "description": "",
+        "summary": "Deletes a recipe",
+        "description": "Deletes a recipe from the database based off its ID",
         "parameters": [
           {
             "name": "id",

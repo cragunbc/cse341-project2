@@ -6,3 +6,52 @@ GET http://localhost:3000/recipes
 
 ### Gets a single recipe by it's ID
 GET http://localhost:3000/recipes/68b22c264e1c21ef371e0c7e
+
+
+### Creates a new recipe
+POST http://localhost:3000/recipes
+content-type: application/json
+
+{
+    "title": "Burrito Grande",
+    "author": "Jose Johnson",
+    "cuisine": "Mexican",
+    "rating": 5,
+    "ingredients": [
+        "1 soft shell",
+        "4oz of seasoned beef",
+        "sour cream",
+        "lettuce",
+        "tomatoes",
+        "cheese"
+    ],
+    "cook_temp": 350,
+    "cook_time": 5
+}
+
+
+### Updates a recipe locally by ID
+PUT http://localhost:3000/recipes/68cebd1e30eebaf2136570f0
+content-type: application/json
+
+{
+    "title": "Burrito Grande Supreme",
+    "author": "Jose Johnson",
+    "cuisine": "Mexican",
+    "rating": 5,
+    "ingredients": [
+        "1 soft shell",
+        "4oz of seasoned beef",
+        "sour cream",
+        "lettuce",
+        "tomatoes",
+        "cheese",
+        "nacho cheese"
+    ],
+    "cook_temp": 7550,
+    "cook_time": 5
+}
+
+
+### Deletes a recipe by its ID
+DELETE http://localhost:3000/recipes/68cebbae5fbd96e5eb6c5110

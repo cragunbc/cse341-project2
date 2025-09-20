@@ -5,8 +5,8 @@ const doc = {
         title: "Recipes API",
         description: "Recipes API"
     },
-    host: "localhost:3000",
-    schemes: ["http"]
+    host: "cse341-project2-u2ip.onrender.com",
+    schemes: ["https"]
 };
 
 const outputFile = "./swagger.json";
